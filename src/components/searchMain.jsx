@@ -42,11 +42,7 @@ function SearchMain() {
 
   useEffect(() => {
     handleClick();
-<<<<<<< HEAD
   });
-=======
-  }, [search]);
->>>>>>> bf9183ff7bd3b14ba46ffd7b01ae2edb94e50312
 
   return (
     <>
