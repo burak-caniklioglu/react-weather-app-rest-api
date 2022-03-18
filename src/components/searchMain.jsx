@@ -12,7 +12,7 @@ function SearchMain() {
 
   const handleClick = async () => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=07c6ea0179dc3c015ed3fb9f74f5bf57&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=248a86195f6dbc96258b0b33a174b8e4&units=metric`;
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
