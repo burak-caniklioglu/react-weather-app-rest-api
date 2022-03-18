@@ -42,7 +42,7 @@ function SearchMain() {
 
   useEffect(() => {
     handleClick();
-  }, []);
+  });
 
   return (
     <>
