@@ -42,14 +42,14 @@ function SearchMain() {
 
   useEffect(() => {
     handleClick();
-  });
+  }, []);
 
   return (
     <>
       <div className="wrap">
         <div className="search">
           <input
-            type="search"
+            type="input"
             placeholder="type city name.."
             id="searchTerm"
             value={search}
