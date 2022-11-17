@@ -135,11 +135,17 @@ body {
 
 /* input search button style  */
 
+form{
+  display: flex;
+  
+}
+
 .search {
   width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
 }
 
 #searchTerm {
@@ -169,6 +175,7 @@ body {
   font-size: 20px;
   outline: none;
   font-size: 16px;
+  margin-top: 3rem;
 }
 
 .searchButton:hover {

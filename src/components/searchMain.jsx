@@ -3,14 +3,14 @@ import WeatherDetails from "./WeatherDetails";
 
 function SearchMain() {
   const [search, setSearch] = useState("İstanbul");
-
+  console.log(search);
   function handleChange(e) {
     setSearch(e.target.value);
   }
 
   const [tempInfo, setTempInfo] = useState({});
 
-  const handleClick = async () => {
+  const handleClick = async () => { 
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=248a86195f6dbc96258b0b33a174b8e4&units=metric`;
       const res = await fetch(url);
@@ -44,9 +44,15 @@ function SearchMain() {
     handleClick();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleClick()
+  }
+
   return (
     <>
       <div className="wrap">
+        <form >
         <div className="search">
           <input
             type="input"
@@ -57,9 +63,10 @@ function SearchMain() {
             onClick={()=> setSearch("")}
           />
         </div>
-        <button className="searchButton" onClick={handleClick}>
+        <button className="searchButton" onClick={(e)=>handleSubmit(e)}>
           search
         </button>
+        </form>
       </div>
       <WeatherDetails  {...tempInfo} />
     </>

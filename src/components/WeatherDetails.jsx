@@ -11,6 +11,7 @@ function WeatherDetails({temp,
 
 
     const [weatherIcon, setWeatherIcon] = useState("")
+    const [time,setTime] = useState()
 
     useEffect(() => {
         if (weatherType) {
@@ -44,8 +45,14 @@ function WeatherDetails({temp,
 
     let sec = sunset;
     let date = new Date(sec * 1000)
-    let time = `${date.getHours()}:${date.getMinutes()}`
+    let timer = `${date.getHours()}:${date.getMinutes()}`
 
+    useEffect(()=>{
+        setInterval(() => {
+            setTime(new Date().toLocaleTimeString())
+        },1000)
+        clearInterval()
+    },[])
   return (
     <div>
         <article className="widget">
@@ -63,13 +70,13 @@ function WeatherDetails({temp,
                     </div>
                 </div>
             </div>
-            <div className="date">{new Date().toLocaleString()}</div>
+            <div className="date">{time}</div>
             <div className="extra-temp">
                 <div className="temp-info-minmax">
                     <div className="two-sided-section">
                         <p><i className={"wi wi-sunset"}></i></p>
                         <p className="extra-info-leftside">
-                            {time} <br />
+                            {timer} <br />
                             Sunset
                         </p>
                     </div>
